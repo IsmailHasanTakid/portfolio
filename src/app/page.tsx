@@ -1,8 +1,10 @@
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutMe from "./components/Aboutme";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import Projects from "./components/Projects";
+import ContactSection from "./components/ContactSection";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
@@ -25,12 +27,15 @@ export default function Home() {
           aria-hidden
           className="pointer-events-none absolute -bottom-[50px] right-[-50px] h-[220px] w-[220px] rounded-full bg-[#1850cf]/35 blur-[70px]"
         />
-
         <Navbar />
         <Hero />
         <AboutMe />
         <Skills />
         <Education />
+        <Projects />
+        <ContactSection />
+
+
       </div>
 
 

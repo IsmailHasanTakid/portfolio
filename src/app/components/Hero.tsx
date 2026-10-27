@@ -60,7 +60,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative z-[5] mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-12 overflow-hidden px-6 py-10 text-center text-white sm:px-10 xl:min-h-[calc(100vh-122px)] xl:grid-cols-[minmax(0,1fr)_546px] xl:gap-x-16 xl:pt-6 xl:pb-[52px] xl:pl-[56px] xl:pr-[30px] xl:text-left"
+            className="relative z-[5] mx-auto grid w-full max-w-[1280px] grid-cols-1 items-center gap-y-12 overflow-hidden px-6 py-10 text-center text-white sm:px-10 xl:min-h-[calc(100vh-122px)] lg:pt-20 xl:grid-cols-[minmax(0,1fr)_546px] xl:gap-x-16 xl:pt-10 xl:pb-[52px] xl:pl-[56px] xl:pr-[30px] xl:text-left"
         >
             {/* Ambient background glow */}
             <div
