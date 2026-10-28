@@ -5,11 +5,11 @@ import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/#home" },
+    { label: "About", href: "/#about" },
+    { label: "Skills", href: "/#skills" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -18,38 +18,84 @@ export default function Navbar() {
 
     return (
         <>
-            {/* Fixed glass navbar */}
+
             <header className="fixed inset-x-0 top-0 z-50">
                 <nav className="relative mx-auto flex h-[76px] w-full items-center justify-between border-b border-white/[0.12] bg-[#080D1B]/75 px-8 text-white shadow-[0_8px_35px_rgba(0,0,0,0.25)] backdrop-blur-2xl sm:px-12 lg:px-24 xl:px-24">
-                    {/* Glass highlight */}
+
                     <div
                         aria-hidden="true"
                         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent"
                     />
 
-                    {/* Subtle background glow */}
+
                     <div
                         aria-hidden="true"
                         className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/[0.035] via-transparent to-violet-500/[0.05]"
                     />
 
-                    {/* Logo */}
+
                     <a
                         href="#home"
                         onClick={() => {
                             setActive("Home");
                             setMenuOpen(false);
                         }}
-                        className="group relative shrink-0 text-[30px] font-bold leading-none tracking-[-1.5px] text-white sm:text-[34px]"
+                        className="group inline-flex shrink-0 items-center gap-2 transition-transform duration-300 hover:scale-105"
                     >
-                        Tak
-                        <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-violet-400 bg-clip-text text-transparent transition-all duration-300">
-                            id
+                        {/* Developer Icon */}
+                        <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-400/30 bg-gradient-to-br from-cyan-400/15 via-blue-500/10 to-violet-500/20 shadow-[0_0_18px_rgba(34,211,238,0.12)] transition-all duration-300 group-hover:border-cyan-300/60 group-hover:shadow-[0_0_25px_rgba(34,211,238,0.3)]">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="21"
+                                height="21"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="url(#takid-icon-gradient)"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <defs>
+                                    <linearGradient
+                                        id="takid-icon-gradient"
+                                        x1="0%"
+                                        y1="0%"
+                                        x2="100%"
+                                        y2="100%"
+                                    >
+                                        <stop offset="0%" stopColor="#22D3EE" />
+                                        <stop offset="50%" stopColor="#3B82F6" />
+                                        <stop offset="100%" stopColor="#A78BFA" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="m8 17-5-5 5-5" />
+                                <path d="m16 7 5 5-5 5" />
+                                <path d="m14 4-4 16" />
+                            </svg>
                         </span>
-                        <span className="text-cyan-300">.</span>
+
+                        {/* Multicolor TAKID Logo */}
+                        <span className="flex items-center text-[30px] font-black leading-none tracking-[-1.8px] sm:text-[34px]">
+                            <span className="bg-gradient-to-br from-cyan-300 via-blue-400 to-violet-500 bg-clip-text text-transparent">
+                                T
+                            </span>
+                            <span className="bg-gradient-to-br from-fuchsia-400 via-violet-400 to-cyan-300 bg-clip-text text-transparent">
+                                A
+                            </span>
+                            <span className="bg-gradient-to-br from-amber-300 via-pink-400 to-rose-500 bg-clip-text text-transparent">
+                                K
+                            </span>
+                            <span className="bg-gradient-to-br from-emerald-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                                I
+                            </span>
+                            <span className="bg-gradient-to-br from-violet-300 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                                D
+                            </span>
+                        </span>
                     </a>
 
-                    {/* Desktop navigation */}
+
+
                     <ul className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-1 lg:flex">
                         {links.map((item) => (
                             <li key={item.label}>
@@ -68,7 +114,7 @@ export default function Navbar() {
                                 >
                                     {item.label}
 
-                                    {/* Active indicator */}
+
                                     <span
                                         className={`absolute inset-x-3 bottom-0 h-[2px] bg-gradient-to-r from-cyan-300 to-blue-500 transition-transform duration-300 ${active === item.label
                                             ? "scale-x-100"
@@ -76,7 +122,7 @@ export default function Navbar() {
                                             }`}
                                     />
 
-                                    {/* Hover glow */}
+
                                     {active === item.label && (
                                         <span
                                             aria-hidden="true"
@@ -88,7 +134,7 @@ export default function Navbar() {
                         ))}
                     </ul>
 
-                    {/* Right side decoration */}
+
                     <div className="hidden items-center gap-2 text-xs text-slate-400 xl:flex">
                         <span className="relative flex h-2 w-2">
                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
@@ -97,7 +143,7 @@ export default function Navbar() {
                         <span>Available for opportunities</span>
                     </div>
 
-                    {/* Mobile menu button */}
+
                     <button
                         type="button"
                         onClick={() => setMenuOpen((open) => !open)}
@@ -117,7 +163,7 @@ export default function Navbar() {
                         )}
                     </button>
 
-                    {/* Mobile dropdown */}
+
                     {menuOpen && (
                         <div
                             id="mobile-menu"
@@ -162,7 +208,7 @@ export default function Navbar() {
                 </nav>
             </header>
 
-            {/* Reserves space for the fixed navbar */}
+
             <div aria-hidden="true" className="h-[76px]" />
         </>
     );

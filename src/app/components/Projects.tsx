@@ -7,17 +7,6 @@ import {
 
 const projects = [
     {
-        number: "01",
-        name: "EDUKIND",
-        category: "AI Learning Platform",
-        description:
-            "An educational platform project focused on building a digital learning experience. More project details will be added after verifying the implemented features.",
-        slug: "edukind",
-        image: "/projects/edukind.png",
-        glow: "group-hover:shadow-blue-500/10",
-        iconColor: "text-blue-300",
-    },
-    {
         number: "02",
         name: "Takid-Barta",
         category: "Project Overview",
@@ -29,13 +18,24 @@ const projects = [
         iconColor: "text-cyan-300",
     },
     {
+        number: "01",
+        name: "EDUKIND",
+        category: "AI Learning Platform",
+        description:
+            "An educational platform project focused on building a digital learning experience. More project details will be added after verifying the implemented features.",
+        slug: "edukind",
+        image: "/projects/edukind.png",
+        glow: "group-hover:shadow-blue-500/10",
+        iconColor: "text-blue-300",
+    },
+    {
         number: "03",
         name: "JerseyArena",
         category: "Project Overview",
         description:
             "Discover the project, its purpose, and the challenges behind its development. Verified features and technologies will be added next.",
         slug: "jerseyarena",
-        image: "/projects/edukind.png",
+        image: "/projects/jersey1.png",
         glow: "group-hover:shadow-violet-500/10",
         iconColor: "text-violet-300",
     },

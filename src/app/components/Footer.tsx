@@ -1,7 +1,7 @@
-
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
     ArrowUpRight,
     Mail,
@@ -17,55 +17,62 @@ const navigation = [
 ];
 
 export default function Footer() {
+    const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+    useEffect(() => {
+        setCurrentYear(new Date().getFullYear());
+    }, []);
+
     return (
         <footer className="relative isolate overflow-hidden border-t border-white/[0.08] bg-[#080A12] text-white">
             {/* Ambient background glow */}
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -left-32 top-0 -z-10 h-72 w-72 rounded-full bg-violet-600/15 blur-[120px]"
+                className="pointer-events-none absolute -left-24 top-0 -z-10 h-48 w-48 rounded-full bg-violet-600/15 blur-[100px] sm:-left-32 sm:h-72 sm:w-72 sm:blur-[120px]"
             />
 
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-32 bottom-0 -z-10 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]"
+                className="pointer-events-none absolute -right-24 bottom-0 -z-10 h-48 w-48 rounded-full bg-cyan-500/10 blur-[100px] sm:-right-32 sm:h-72 sm:w-72 sm:blur-[120px]"
             />
 
-            <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
                 {/* Main footer */}
-                <div className="grid gap-10 py-12 sm:py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_1fr] lg:gap-16">
+                <div className="grid grid-cols-1 gap-8 py-10 text-center sm:gap-10 sm:py-12 md:grid-cols-2 md:gap-x-10 md:gap-y-12 md:text-left lg:grid-cols-[1.5fr_0.8fr_1fr] lg:gap-12 lg:py-16 xl:gap-16">
                     {/* Brand */}
-                    <div>
+                    <div className="flex min-w-0 flex-col items-center md:items-start">
                         <Link
                             href="#home"
-                            className="group inline-flex items-center gap-3"
+                            className="group inline-flex max-w-full items-center gap-2.5 sm:gap-3"
                         >
-                            <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-300/20 bg-gradient-to-br from-cyan-400/15 to-violet-500/20 shadow-[0_0_30px_rgba(34,211,238,0.08)] transition-transform duration-300 group-hover:scale-105">
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-300/20 bg-gradient-to-br from-cyan-400/15 to-violet-500/20 shadow-[0_0_30px_rgba(34,211,238,0.08)] transition-transform duration-300 group-hover:scale-105 sm:h-11 sm:w-11">
                                 <span className="bg-gradient-to-br from-cyan-300 to-violet-300 bg-clip-text text-xl font-bold text-transparent">
                                     T
                                 </span>
                             </div>
 
-                            <div>
-                                <h2 className="text-lg font-bold tracking-[0.16em]">
+                            <div className="text-left">
+                                <h2 className="text-base font-bold tracking-[0.14em] sm:text-lg sm:tracking-[0.16em]">
                                     TAKID
                                 </h2>
-                                <p className="mt-0.5 text-[10px] tracking-[0.2em] text-slate-500">
+                                <p className="mt-0.5 text-[9px] tracking-[0.15em] text-slate-500 sm:text-[10px] sm:tracking-[0.2em]">
                                     DEVELOPER PORTFOLIO
                                 </p>
                             </div>
                         </Link>
 
-                        <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">
+                        <p className="mt-4 max-w-sm text-[13px] leading-6 text-slate-400 sm:mt-5 sm:text-sm sm:leading-7">
                             I build modern digital experiences with clean
                             code, creative ideas, and a passion for solving
                             real-world problems.
                         </p>
 
-                        <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-400/15 bg-emerald-400/[0.06] px-3 py-2">
-                            <span className="relative flex h-2 w-2">
+                        <div className="mt-4 inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-emerald-400/15 bg-emerald-400/[0.06] px-3 py-2 sm:mt-5">
+                            <span className="relative flex h-2 w-2 shrink-0">
                                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
                                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
                             </span>
+
                             <span className="text-xs text-emerald-300">
                                 Open to opportunities
                             </span>
@@ -73,21 +80,23 @@ export default function Footer() {
                     </div>
 
                     {/* Quick links */}
-                    <div>
+                    <div className="flex min-w-0 flex-col items-center md:items-start">
                         <h3 className="text-xs font-semibold tracking-[0.2em] text-slate-300">
                             QUICK LINKS
                         </h3>
 
-                        <ul className="mt-5 space-y-3">
+                        <ul className="mt-4 flex flex-col items-center space-y-3 sm:mt-5 md:items-start">
                             {navigation.map((item) => (
                                 <li key={item.label}>
                                     <Link
                                         href={item.href}
                                         className="group inline-flex items-center gap-2 text-sm text-slate-400 transition-colors duration-200 hover:text-cyan-300"
                                     >
-                                        <span className="h-1 w-1 rounded-full bg-slate-600 transition-colors group-hover:bg-cyan-300" />
+                                        <span className="h-1 w-1 shrink-0 rounded-full bg-slate-600 transition-colors group-hover:bg-cyan-300" />
+
                                         {item.label}
-                                        <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
+
+                                        <ArrowUpRight className="h-3.5 w-3.5 shrink-0 opacity-0 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
                                     </Link>
                                 </li>
                             ))}
@@ -95,32 +104,36 @@ export default function Footer() {
                     </div>
 
                     {/* Connect */}
-                    <div>
+                    <div className="flex min-w-0 flex-col items-center md:col-span-2 md:items-start lg:col-span-1">
                         <h3 className="text-xs font-semibold tracking-[0.2em] text-slate-300">
                             LET&apos;S CONNECT
                         </h3>
 
-                        <p className="mt-5 text-sm leading-6 text-slate-400">
+                        <p className="mt-4 max-w-md text-center text-[13px] leading-6 text-slate-400 sm:mt-5 sm:text-sm md:text-left">
                             Have an idea or an exciting project? Let&apos;s
                             make something meaningful together.
                         </p>
 
                         <a
                             href="mailto:mdtakid62@gmail.com"
-                            className="group mt-4 inline-flex max-w-full items-center gap-2 break-all text-sm font-medium text-cyan-300 transition-colors hover:text-violet-300"
+                            className="group mt-4 inline-flex max-w-full items-center justify-center gap-2 text-sm font-medium text-cyan-300 transition-colors hover:text-violet-300"
                         >
                             <Mail className="h-4 w-4 shrink-0" />
-                            mdtakid62@gmail.com
+
+                            <span className="min-w-0 break-all">
+                                mdtakid62@gmail.com
+                            </span>
+
                             <MoveUpRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                         </a>
 
-                        <div className="mt-5 flex items-center gap-3">
+                        <div className="mt-5 flex items-center justify-center gap-3">
                             <a
                                 href="https://github.com/IsmailHasanTakid"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="GitHub profile"
-                                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
                             >
                                 <svg
                                     viewBox="0 0 24 24"
@@ -136,7 +149,7 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="LinkedIn profile"
-                                className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-cyan-400/[0.08] hover:text-cyan-300"
+                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-400 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-cyan-400/[0.08] hover:text-cyan-300"
                             >
                                 <svg
                                     viewBox="0 0 24 24"
@@ -151,22 +164,22 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="flex flex-col gap-4 border-t border-white/[0.08] py-5 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-center text-xs text-slate-500 sm:text-left">
-                        © {new Date().getFullYear()} Ismail Hasan Takid.
+                <div className="flex flex-col items-center gap-4 border-t border-white/[0.08] py-5 sm:gap-3 md:flex-row md:items-center md:justify-between">
+                    <p className="text-center text-xs leading-5 text-slate-500 md:text-left">
+                        © {currentYear ?? "2026"} Ismail Hasan Takid.
                         All rights reserved.
                     </p>
 
-                    <p className="flex items-center justify-center gap-1.5 text-xs text-slate-500 sm:justify-end">
+                    <p className="flex flex-wrap items-center justify-center gap-1.5 text-center text-xs leading-5 text-slate-500">
                         Crafted with
-                        <Heart className="h-3.5 w-3.5 fill-pink-400 text-pink-400" />
+                        <Heart className="h-3.5 w-3.5 shrink-0 fill-pink-400 text-pink-400" />
                         and a passion for code
                     </p>
 
                     <Link
                         href="#home"
                         aria-label="Back to top"
-                        className="group mx-auto flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-400 transition-all hover:border-cyan-300/30 hover:text-cyan-300 sm:mx-0"
+                        className="group mx-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-400 transition-all hover:border-cyan-300/30 hover:text-cyan-300 md:mx-0"
                     >
                         <ArrowUpRight className="-rotate-45 h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
                     </Link>
