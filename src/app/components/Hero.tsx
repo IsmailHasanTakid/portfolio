@@ -168,7 +168,7 @@ export default function Hero() {
             </div >
 
             {/* Right photo card */}
-            <div div className="flex justify-center xl:block" >
+            <div className="flex justify-center xl:block">
                 <div className="group relative h-[clamp(420px,70vh,560px)] w-full max-w-[460px] rounded-[40px] border border-[#4f9bff]/50 bg-[rgba(9,20,44,0.4)] p-3 shadow-[0_0_20px_rgba(60,140,255,0.2),0_0_65px_rgba(38,110,240,0.15),inset_0_0_22px_rgba(56,132,255,0.08)] transition-all duration-500 hover:border-[#75b3ff]/80 hover:shadow-[0_0_28px_rgba(60,140,255,0.28),0_0_75px_rgba(38,110,240,0.2)] xl:h-[min(642px,calc(100vh-150px))] xl:max-w-[546px] xl:rounded-[48px] xl:p-[14px]">
                     <div className="relative h-full w-full overflow-hidden rounded-[30px] border border-[rgba(110,165,255,0.35)] bg-[radial-gradient(ellipse_at_50%_28%,#1064cd_0%,#0a3f92_32%,#06234f_70%,#041a3c_100%)] xl:rounded-[36px]">
                         {/* Decorative arcs */}
