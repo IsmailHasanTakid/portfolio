@@ -17,15 +17,15 @@ const Linkedin = ({ className, ...rest }: BrandIconProps) => (
     </svg>
 );
 
-const Twitter = ({ className, ...rest }: BrandIconProps) => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className={className} {...rest}>
-        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
-    </svg>
-);
-
 const Facebook = ({ className, ...rest }: BrandIconProps) => (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} {...rest}>
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+);
+
+const LeetCode = ({ className, ...rest }: BrandIconProps) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} {...rest}>
+        <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
     </svg>
 );
 
@@ -42,17 +42,18 @@ const socialLinks = [
         icon: Linkedin,
         color: "hover:border-sky-400/50 hover:bg-sky-400/10 hover:text-sky-300",
     },
-    {
-        name: "Twitter",
-        href: "https://twitter.com/",
-        icon: Twitter,
-        color: "hover:border-sky-400/50 hover:bg-sky-400/10 hover:text-sky-300",
-    },
+
     {
         name: "Facebook",
         href: "https://www.facebook.com/takid.takid.9",
         icon: Facebook,
         color: "hover:border-blue-400/50 hover:bg-blue-400/10 hover:text-blue-300",
+    },
+    {
+        name: "LeetCode",
+        href: "https://leetcode.com/u/Takid/",
+        icon: LeetCode,
+        color: "hover:border-amber-400/50 hover:bg-amber-400/10 hover:text-amber-300",
     },
 ];
 
@@ -115,7 +116,7 @@ export default function Hero() {
                 {/* Action buttons */}
                 <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4 xl:justify-start">
                     <a
-                        href="/cv.pdf"
+                        href="/takid-cv.pdf"
                         download="Ismail-Hasan-Takid-Resume.pdf"
                         className="group inline-flex h-[56px] items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#1265f5] via-[#287cff] to-[#438fff] px-7 text-[15px] font-semibold text-white shadow-[0_10px_35px_rgba(20,100,255,0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_45px_rgba(20,100,255,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080A12] sm:px-8"
                     >
@@ -140,8 +141,8 @@ export default function Hero() {
                 </div>
 
                 {/* Social links */}
-                <div className="mt-8 flex items-center justify-center xl:justify-start">
-                    <div className="flex items-center gap-2.5">
+                <div className="mt-8 flex items-center justify-center -translate-x-8 xl:justify-start">
+                    <div className="flex items-center gap-2.5 xl:ml-10">
                         {socialLinks.map((social) => {
                             const Icon = social.icon;
 
@@ -164,10 +165,10 @@ export default function Hero() {
                         })}
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Right photo card */}
-            <div className="flex justify-center xl:block">
+            <div div className="flex justify-center xl:block" >
                 <div className="group relative h-[clamp(420px,70vh,560px)] w-full max-w-[460px] rounded-[40px] border border-[#4f9bff]/50 bg-[rgba(9,20,44,0.4)] p-3 shadow-[0_0_20px_rgba(60,140,255,0.2),0_0_65px_rgba(38,110,240,0.15),inset_0_0_22px_rgba(56,132,255,0.08)] transition-all duration-500 hover:border-[#75b3ff]/80 hover:shadow-[0_0_28px_rgba(60,140,255,0.28),0_0_75px_rgba(38,110,240,0.2)] xl:h-[min(642px,calc(100vh-150px))] xl:max-w-[546px] xl:rounded-[48px] xl:p-[14px]">
                     <div className="relative h-full w-full overflow-hidden rounded-[30px] border border-[rgba(110,165,255,0.35)] bg-[radial-gradient(ellipse_at_50%_28%,#1064cd_0%,#0a3f92_32%,#06234f_70%,#041a3c_100%)] xl:rounded-[36px]">
                         {/* Decorative arcs */}
@@ -203,7 +204,7 @@ export default function Hero() {
                         />
                     </div>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }
